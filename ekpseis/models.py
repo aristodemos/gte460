@@ -49,6 +49,7 @@ class Staff (models.Model):
 	telephone	=	models.CharField(max_length=10, 	null=True, blank=True)
 	asma		=	models.CharField(max_length=5)
 	arxaiotita	=	models.PositiveSmallIntegerField()
+	date_of_birth = models.DateField("Date of Birth")
 	trainings	=	models.ManyToManyField('Ekpaideusi', through='Membership')
 	'''
 	def trainings_names(self):
@@ -87,6 +88,7 @@ class Membership(models.Model):
 	training = models.ForeignKey(Ekpaideusi)
 	vathmos_ejou		= models.CharField(max_length=3, choices=Vathmoi_Ejou_Choices, null=True, blank=True )
 	epipedo_ejou		= models.CharField(max_length=3, choices=Epipeda_Ejou_Choices, null=True, blank=True)
+	date_of_evaluation = models.DateField("Last Evaluation" , null=True, blank=True)
 	
 	def __unicode__(self):
 		return 'Εξουσιοδοτήσεις'

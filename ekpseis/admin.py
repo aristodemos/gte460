@@ -10,7 +10,7 @@ class MembershipInline(admin.TabularInline):
 	list_display_links = ['person']
 
 class StaffAdmin(admin.ModelAdmin):
-	fields = ['arxaiotita', 'asma', 'full_name', 'vathmos', 'eidikotita','kathikon','email', 'telephone']
+	fields = ['arxaiotita', 'asma', 'full_name', 'vathmos', 'eidikotita','kathikon', 'date_of_birth','email', 'telephone']
 	list_display=('arxaiotita', 'full_name', 'vathmos', 'eidikotita', 'kathikon', 'asma')
 	list_display_links = ['full_name']
 	#list_editable = ('eidikotita', 'kathikon')
